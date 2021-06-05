@@ -7,7 +7,7 @@ function Fetch() {
 
     useEffect(() => {
         fetchAPI();
-    });
+    }, []);
 
     async function fetchAPI() {
         const data = [];
