@@ -1,3 +1,5 @@
+Fetching pokemon API using useState and useEffect hooks in reactJS - by Dushyant Singh
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
