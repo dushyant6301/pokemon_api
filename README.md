@@ -1,4 +1,4 @@
-Fetching pokemon API using useState and useEffect hooks in reactJS.
+Fetching pokemon API using useState and useEffect hooks in reactJS - by Dushyant Singh
 
 # Getting Started with Create React App
 
