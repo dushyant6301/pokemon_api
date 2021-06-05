@@ -1,16 +1,15 @@
-import React, { Component } from 'react'
+import React, { useState, useEffect } from 'react'
 import Looks from './Looks';
 
-class Fetch extends Component {
-    constructor(props) {
-        super(props)
+function Fetch() {
 
-        this.state = {
-            pokemons: []
-        }
-    }
+    const [pokemons, setPokemon] = useState([]);
 
-    async componentDidMount() {
+    useEffect(() => {
+        fetchAPI();
+    });
+
+    async function fetchAPI() {
         const data = [];
         for (let id = 1; id <= 200; id++) {
             const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
@@ -18,18 +17,17 @@ class Fetch extends Component {
 
             data.push({ id: ID, name: name, image: sprites.front_default });
         }
-        this.setState({ pokemons: data })
+        setPokemon(data);
     }
 
-    render() {
-        return (
-            <div className='all-container'>
-                { this.state.pokemons.map((pokemon, i) => (
-                    <Looks key={i} pokemon={pokemon} />
-                ))}
-            </div>
-        )
-    }
+    return (
+        <div className='all-container'>
+            { pokemons.map((pokemon, i) => (
+                <Looks key={i} pokemon={pokemon} />
+            ))}
+        </div>
+    )
 }
 
 export default Fetch
+
